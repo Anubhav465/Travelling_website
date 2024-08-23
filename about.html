@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - World Travel</title>
+    <link rel="stylesheet" href="about_style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>World Travel</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to World Travel! We are passionate about helping you explore the world. Our mission is to make travel accessible and enjoyable for everyone.</p>
+            <div class="story fade-in">
+                <h2>Our Story</h2>
+                <p>Founded by two friends who shared a love of travel, we decided to follow our passion and start our own travel company. We wanted to create a business that would help others experience the same joy and wonder that we felt when we traveled.</p>
+            </div>
+            <div class="values fade-in">
+                <h2>Our Values</h2>
+                <p>At World Travel, we believe in sustainable and responsible travel. We are committed to minimizing our impact on the environment and supporting local communities wherever we go. We also believe in providing our customers with exceptional service every step of the way.</p>
+            </div>
+            <div class="gallery fade-in">
+                <h2>Our Adventures</h2>
+                <div class="gallery-container">
+                    <img src="/about_img/about1.jpg" alt="Adventure 1">
+                    <img src="/about_img/image.png" alt="Adventure 2">
+                    <img src="/about_img/image copy.png" alt="Adventure 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <p>© 2024 World Travel. All rights reserved.</p>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js">// script.js
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutSection = document.querySelector('.about-section');
+            aboutSection.style.opacity = '0';
+            aboutSection.style.transition = 'opacity 1.5s ease-in-out';
+        
+            setTimeout(() => {
+                aboutSection.style.opacity = '1';
+            }, 500);
+        
+            const galleryImages = document.querySelectorAll('.gallery-container img');
+        
+            galleryImages.forEach((img) => {
+                img.addEventListener('mouseover', () => {
+                    img.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+                });
+                img.addEventListener('mouseout', () => {
+                    img.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                });
+            });
+        
+            window.addEventListener('scroll', function() {
+                const elements = document.querySelectorAll('.story, .values, .gallery');
+                const screenPosition = window.innerHeight / 1.3;
+        
+                elements.forEach((element) => {
+                    const elementPosition = element.getBoundingClientRect().top;
+        
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('fade-in');
+                    }
+                });
+            });
+        });
+        </script>
+</body>
+</html>

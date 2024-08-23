@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soneva Resort</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.details img {
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resort-info {
+    width: 50%;
+    padding-left: 20px;
+}
+
+.resort-info h2 {
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.resort-info h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.resort-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.booking {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking h2 {
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #2980b9;
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1f6391;
+}
+
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Soneva Fushi Resort</h1>
+            <p>A paradise in the heart of the Maldives</p>
+        </header>
+
+        <section class="details">
+            <img src="soneva-pool.jpg" alt="Soneva Fushi Pool">
+            <div class="resort-info">
+                <h2>About Soneva Fushi</h2>
+                <p>Soneva Fushi is an award-winning luxury resort located in the breathtaking Baa Atoll in the Maldives. This eco-friendly resort offers beachfront villas with private pools and unparalleled ocean views. Guests can enjoy a range of activities, including snorkeling, diving, and stargazing at the resort's observatory.</p>
+                <h3>Special Amenities:</h3>
+                <ul>
+                    <li>Private beachfront villas with pools</li>
+                    <li>World-class dining and wine cellar</li>
+                    <li>Overwater spa with Ayurvedic treatments</li>
+                    <li>Swimming pools with ocean views</li>
+                    <li>Exclusive cinema on the beach</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="booking">
+            <h2>Book Your Stay</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkin">Check-in Date:</label>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Check-out Date:</label>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests:</label>
+                    <input type="number" id="guests" name="guests" min="1" max="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Special Requests:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+    </div>
+    <script src="script.js">document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        alert('Your booking has been submitted successfully!');
+    });
+    </script>
+</body>
+</html>

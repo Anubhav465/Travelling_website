@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Temples in Cambodia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #228b22 3px solid;
+        }
+        header h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .temple {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border: #ccc 1px solid;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+        }
+        .temple img {
+            width: 100%;
+            max-width: 300px;
+            height: 150px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin: 10px;
+        }
+        .temple img:hover {
+            transform: scale(1.05);
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            text-align: left;
+        }
+        .hotel-link {
+            display: block;
+            margin: 10px auto;
+            background: #228b22;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            width: fit-content;
+        }
+        .hotel-link:hover {
+            background: #006400;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Best Temples in Cambodia</h1>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/about.html">About Us</a>
+            <a href="#services">Services</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="temple" onclick="toggleDetails('details1')">
+            <h2>Angkor Wat</h2>
+            <img src="/temple/angkorwat1.png" alt="Angkor Wat">
+            <img src="/temple/angkorwat2.png" alt="Angkor Wat">
+            <img src="/temple/angkorwat3.png" alt="Angkor Wat">
+            <div id="details1" class="details">
+                <p>Angkor Wat is the largest religious monument in the world and a symbol of Cambodia. This iconic temple complex in Siem Reap is renowned for its grandeur and intricate carvings.</p>
+                <a href="https://www.tripadvisor.com/HotelsNear-g297390-d317907-Angkor_Wat-Siem_Reap_Siem_Reap_Province.html" class="hotel-link" target="_blank">Nearest Hotels</a>
+            </div>
+        </div>
+        <div class="temple" onclick="toggleDetails('details2')">
+            <h2>Bayon Temple</h2>
+            <img src="/temple/bayon1.png" alt="Bayon Temple">
+            <img src="/temple/bayon2.png" alt="Bayon Temple">
+            <img src="/temple/bayon3.png" alt="Bayon Temple">
+            <div id="details2" class="details">
+                <p>Bayon Temple, located in the Angkor Thom complex, is famous for its enigmatic smiling stone faces and intricate bas-reliefs depicting historical events and daily life.</p>
+                <a href="https://www.tripadvisor.com/HotelsNear-g297390-d325218-Bayon_Temple-Siem_Reap_Siem_Reap_Province.html" class="hotel-link" target="_blank">Nearest Hotels</a>
+            </div>
+        </div>
+        <div class="temple" onclick="toggleDetails('details3')">
+            <h2>Ta Prohm</h2>
+            <img src="/temple/taprohm1.png" alt="Ta Prohm">
+            <img src="/temple/taprohm2.png" alt="Ta Prohm">
+            <img src="/temple/taprohm3.png" alt="Ta Prohm">
+            <div id="details3" class="details">
+                <p>Ta Prohm is known for its atmospheric blend of nature and ancient architecture, with massive tree roots entwined around the ruins. It was also featured in the "Tomb Raider" movie.</p>
+                <a href="https://www.tripadvisor.com/HotelsNear-g297390-d325218-Ta_Prohm-Siem_Reap_Siem_Reap_Province.html" class="hotel-link" target="_blank">Nearest Hotels</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

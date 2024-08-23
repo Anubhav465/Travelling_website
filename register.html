@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <title>Login</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: url("/login_image/image.png");
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contian{
+    width: 400px;
+    height:500px;
+
+   backdrop-filter: blur(5px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h2{
+    color: #fff;
+    text-transform: uppercase;
+    padding: 20px 0;
+    font-size: 2em;
+}
+
+.formgroup{
+    position: relative;
+     width: 330px;
+     margin: 30px 0;
+     border-bottom: 3px solid #fff;
+}
+
+.formgroup input
+{
+    width:100% ;
+    height: 50%;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    font-size: 1.2em;
+    color: white;
+    padding: 0 30px 0 10px;
+}
+.formgroup label
+{
+   position: absolute;
+   top: 50%;
+   left: 10px;
+   transform: translateY(-50%);
+   font-size: 1.2em;
+   color: #fff;
+   transition: 0.5s;
+}
+
+input:focus ~ label,
+input:valid ~ label
+{
+    top: -5px;
+}
+.formgroup i{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.2em;
+}
+p{
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+}
+
+p>a
+{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+p>a:hover
+{
+    text-decoration: underline;
+    font-style: italic;
+
+}
+#btn{
+    width: 100%;
+    height: 50px;
+    border-radius: 40px;
+    border: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#btn:hover{
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+</style>
+<body>
+    <div class="contian">
+        <h2>Login</h2>
+        <form action="">
+            <div class="formgroup">
+                <input type="email" required>
+                <label for="">Email</label>
+                <i class="bi bi-envelope-fill"></i>
+            </div>
+            <div class="formgroup">
+                <input type="password" required>
+                <label for="">Password</label>
+                <i class="bi bi-lock-fill"></i>
+                </div>
+                <p><input type="checkbox">Remember me <a href="#">Forget Password</a></p>
+                <input id="btn" type="button" value="Login">
+                <p>Don't have a account ?<a href="#">Register</a></p>
+        </form>
+    </div>
+</body>
+</html>

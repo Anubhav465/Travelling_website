@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>World Travel</title>
+</head>
+<style>
+    body {
+   font-family: 'Poppins', sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   background-color: #f4f4f4;
+}
+
+header {
+   width: 100%;
+   height: 90vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/cover.jpg') no-repeat center center/cover;
+   color: white;
+   background-attachment: fixed;
+}
+
+nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
+nav h4 {
+   margin: 0;
+}
+
+nav ul {
+   list-style: none;
+   display: flex;
+   gap: 15px;
+}
+
+nav ul li {
+   margin: 0;
+}
+
+nav ul li a {
+   text-decoration: none;
+   color: white;
+   font-size: 16px;
+   padding: 10px 20px;
+   border-radius: 20px;
+   transition: background 0.3s;
+}
+
+nav ul li a:hover {
+   background: #f39c12;
+}
+
+.content {
+   text-align: center;
+   padding: 0 20px;
+}
+
+.content h1 {
+   font-size: 3rem;
+   margin-bottom: 20px;
+}
+
+.content p {
+   font-size: 1.2rem;
+   margin-bottom: 30px;
+}
+
+.content button {
+   padding: 10px 20px;
+   border: none;
+   border-radius: 30px;
+   background: #f39c12;
+   color: white;
+   font-size: 1rem;
+   cursor: pointer;
+   transition: background 0.3s;
+}
+
+.content button:hover {
+   background: #d35400;
+}
+
+.tripbox {
+   padding: 20px;
+   background-color: #0000;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+   border-radius: 10px;
+   margin: -50px auto 0;
+   width: 90%;
+   max-width: 1200px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
+   backdrop-filter: blur(10px);
+}
+
+.tripbox .card {
+   flex: 1 1 calc(33.333% - 10px);
+   min-width: 250px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.tripbox .card h4 {
+   margin: 0;
+   font-size: 1rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.tripbox .card input {
+    width: 95%;
+   padding: 10px;
+   border: none;
+   border-radius: 5px;
+   font-size: 1rem;
+}
+.tripbox input[type="button"] {
+   width: 100%;
+   padding: 10px;
+   border: none;
+   border-radius: 5px;
+   font-size: 1rem;
+}
+
+.tripbox input[type="button"] {
+   background-color: #f39c12;
+   color: white;
+   cursor: pointer;
+   transition: background 0.3s;
+}
+
+.tripbox input[type="button"]:hover {
+   background-color: #d35400;
+}
+
+.offers {
+   padding: 50px 20px;
+   background-color: #fff;
+}
+
+.offers h1 {
+   text-align: center;
+   font-size: 2.5rem;
+   margin-bottom: 20px;
+}
+
+.offers p {
+   text-align: center;
+   font-size: 1.2rem;
+   margin-bottom: 50px;
+}
+
+.offers .cards {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 20px;
+}
+
+.offers .card {
+   background: white;
+   border-radius: 10px;
+   overflow: hidden;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+   flex: 1 1 calc(25% - 20px);
+   min-width: 250px;
+}
+
+.offers .card h3 {
+   margin: 0;
+   background-color: #f39c12;
+   color: white;
+   text-align: center;
+   padding: 10px;
+   font-size: 1.2rem;
+}
+
+.offers .card .container {
+   position: relative;
+}
+
+.offers .card .image {
+   width: 100%;
+   display: block;
+}
+
+.offers .card .text {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   padding: 10px;
+   background: rgba(0, 0, 0, 0.7);
+   color: white;
+   font-size: 0.9rem;
+}
+
+.offers .card .cntbox {
+   padding: 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #f9f9f9;
+}
+
+.like-container {
+   display: flex;
+   align-items: center;
+   font-size: 1.5rem;
+}
+
+.like-container button {
+   background: none;
+   border: none;
+   cursor: pointer;
+   color: #888;
+   transition: color 0.3s;
+}
+
+.like-container button:hover {
+   color: #e74c3c;
+}
+
+.like-container button.liked {
+   color: #e74c3c;
+}
+
+.price h4 {
+   margin: 0;
+   font-size: 1.5rem;
+   font-weight: 700;
+}
+
+.price a {
+   color: #3498db;
+   text-decoration: none;
+   transition: color 0.3s;
+}
+
+.price a:hover {
+   color: #2980b9;
+}
+
+.days {
+   background-color: #3498db;
+   color: white;
+   padding: 10px;
+   border-radius: 50%;
+   text-align: center;
+   font-size: 1.2rem;
+   transition: transform 0.3s;
+}
+
+.days:hover {
+   transform: rotate(360deg);
+}
+
+@media (max-width: 768px) {
+   .tripbox {
+       flex-direction: column;
+   }
+
+   .tripbox .card {
+       width: 100%;
+   }
+
+   .offers .cards {
+       flex-direction: column;
+   }
+
+   .offers .card {
+       width: 100%;
+   }
+
+}
+footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer a {
+        color: #f39c12;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    footer .social-icons {
+        margin-top: 10px;
+    }
+
+    footer .social-icons a {
+        color: white;
+        font-size: 20px;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    footer .social-icons a:hover {
+        color: #f39c12;
+    }
+
+    footer .footer-bottom {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+</style>
+<body>
+    <header>
+        <nav>
+            <h4>WORLD TRAVEL</h4>
+            <ul>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="special_deals.html">Special Deals</a></li>
+                <li><a href="contactus.html">Contact us</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+            <i class="bi bi-three-dots"></i>
+        </nav>
+        <div class="content">
+            <h1>The Right Destination for You and Your Family</h1>
+            <p>Creative taglines have the capability of capturing the attention of potential customers.</p>
+            <button>Start Your Search</button>
+        </div>
+        <div class="tripbox">
+            <div class="card">
+                <h4>Location <i class="bi bi-caret-down-fill"></i></h4>
+                <input type="text" placeholder="Enter your destination">
+            </div>
+            <div class="card">
+                <h4>Date <i class="bi bi-caret-down-fill"></i></h4>
+                <input type="date">
+            </div>
+            <div class="card">
+                <h4>People <i class="bi bi-caret-down-fill"></i></h4>
+                <input type="number" placeholder="How many people?">
+            </div>
+            <input type="button" value="Explore Now">
+        </div>
+    </header>
+    <section class="offers">
+        <h1>Best Tour Package Offers Only for You</h1>
+        <p>Choose your next destination</p>
+        <div class="cards">
+            <div class="card">
+                <h3>Oceans</h3>
+                <div class="container">
+                    <img src="/index_img/image.png" alt="Maldives" class="image">
+                    <div class="text">Sandy beaches and crystal clear water</div>
+                </div>
+                <div class="cntbox">
+                    <div class="like-container">
+                        <button class="bi bi-heart" onclick="toggleLike(this)"></button>
+                    </div>
+                    <div class="price">
+                        <!-- <h4>$890</h4> -->
+                        <a href="ocean.html">See more</a>
+                    </div>
+                    <!-- <div class="days">3 Days</div> -->
+                </div>
+            </div>
+            <div class="card">
+                <h3>Temples</h3>
+                <div class="container">
+                    <img src="/temple_img/cover.jpeg" alt="Temples" class="image">
+                    <div class="text">Temples</div>
+                </div>
+                <div class="cntbox">
+                    <div class="like-container">
+                        <button class="bi bi-heart" onclick="toggleLike(this)"></button>
+                    </div>
+                    <div class="price">
+                        <!-- <h4>$1100</h4> -->
+                        <a href="temple.html">See more</a>
+                    </div>
+                    <!-- <div class="days">5 Days</div> -->
+                </div>
+            </div>
+            <div class="card">
+                <h3>Mountain</h3>
+                <div class="container">
+                    <img src="/mountain/mountains.jpeg" alt="Rockies" class="image">
+                    <div class="text">Majestic mountains and stunning views</div>
+                </div>
+                <div class="cntbox">
+                    <div class="like-container">
+                        <button class="bi bi-heart" onclick="toggleLike(this)"></button>
+                    </div>
+                    <div class="price">
+                        <!-- <h4>$650</h4> -->
+                        <a href="mountain.html">See more</a>
+                    </div>
+                    <!-- <div class="days">4 Days</div> -->
+                </div>
+            </div>
+            <div class="card">
+                <h3>Safari in Forest</h3>
+                <div class="container">
+                    <img src="/forest_all/CyzAr9joRNuEMJWDFsIZlA[1].jpeg" alt="Forest" class="image">
+                    <div class="text">Experience the wild like never before</div>
+                </div>
+                <div class="cntbox">
+                    <div class="like-container">
+                        <button class="bi bi-heart" onclick="toggleLike(this)"></button>
+                    </div>
+                    <div class="price">
+                        <!-- <h4>$1200</h4> -->
+                        <a href="forest.html">See more</a>
+                    </div>
+                    <!-- <div class="days">7 Days</div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 World Travel. All Rights Reserved.</p>
+            <nav>
+                <a href="privacy.html">Privacy Policy</a>|
+                <a href="terms.html">Terms of Service</a>|
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" class="bi bi-facebook" title="Facebook"></a>
+                <a href="https://twitter.com" target="_blank" class="bi bi-twitter" title="Twitter"></a>
+                <a href="https://instagram.com" target="_blank" class="bi bi-instagram" title="Instagram"></a>
+                <a href="https://linkedin.com" target="_blank" class="bi bi-linkedin" title="LinkedIn"></a>
+            </div>
+            <div class="footer-bottom">
+                <p>Created with <span style="color: #e25555;">&hearts;</span> by World Travel Team</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    function toggleLike(button) {
+        button.classList.toggle('bi-heart');
+        button.classList.toggle('bi-heart-fill');
+        button.classList.toggle('liked');
+    }
+</script>
+</html>

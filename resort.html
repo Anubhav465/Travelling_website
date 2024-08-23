@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Resorts in Maldives</title>
+    <link rel="stylesheet" href="style_resort.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Top Resorts in Maldives</h1>
+        <div class="resorts">
+            <div class="resort">
+                <a href="/resort_book.html">
+                    <img src="soneva.jpg" alt="Soneva Fushi">
+                    <h2>Soneva Fushi</h2>
+                </a>
+            </div>
+            
+            <div class="resort" onclick="showDetails('gili')">
+                <img src="gili.jpg" alt="Gili Lankanfushi">
+                <h2>Gili Lankanfushi</h2>
+            </div>
+            <div class="resort" onclick="showDetails('reethi')">
+                <img src="reethi.jpg" alt="One&Only Reethi Rah">
+                <h2>One&Only Reethi Rah</h2>
+            </div>
+        </div>
+
+        <div class="details" id="resortDetails">
+            <!-- Resort details will be displayed here -->
+        </div>
+    </div>
+    <script src="script.js">function showDetails(resort) {
+        const resortDetails = document.getElementById('resortDetails');
+        let details = '';
+    
+        if (resort === 'soneva') {
+            details = `
+                <h3>Soneva Fushi</h3>
+                <p>Rooms: Beachfront villas with private pools and direct beach access.</p>
+                <p>Cost: Starting from $1,500 per night.</p>
+                <p>Location: Baa Atoll, Maldives.</p>
+            `;
+        } else if (resort === 'gili') {
+            details = `
+                <h3>Gili Lankanfushi</h3>
+                <p>Rooms: Overwater villas with glass floors and outdoor terraces.</p>
+                <p>Cost: Starting from $2,000 per night.</p>
+                <p>Location: North Male Atoll, Maldives.</p>
+            `;
+        } else if (resort === 'reethi') {
+            details = `
+                <h3>One&Only Reethi Rah</h3>
+                <p>Rooms: Luxury villas with ocean views and private beaches.</p>
+                <p>Cost: Starting from $2,500 per night.</p>
+                <p>Location: North Male Atoll, Maldives.</p>
+            `;
+        }
+    
+        // Display the details with a smooth animation
+        resortDetails.innerHTML = details;
+        resortDetails.classList.add('visible');
+    }
+    </script>
+</body>
+</html>

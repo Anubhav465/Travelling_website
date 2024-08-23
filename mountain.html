@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Adventures | Explore the World's Best Mountain Destinations</title>
+    <!-- <link rel="stylesheet" href="ocean.css"> -->
+</head>
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body and Font Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    /* Navigation Bar */
+    header {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav .logo {
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        list-style: none;
+    }
+
+    .nav-links li {
+        display: inline;
+        margin-left: 20px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .nav-links a:hover {
+        color: #f0c040;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: #fff;
+        text-align: center;
+    }
+
+    #bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        animation: fadeInDown 1s ease-in-out;
+    }
+
+    .hero-content p {
+        font-size: 24px;
+        margin-bottom: 30px;
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    .cta-btn {
+        background: #f0c040;
+        color: #000;
+        padding: 15px 30px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background 0.3s;
+        animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .cta-btn:hover {
+        background: #e0a020;
+    }
+
+    /* Keyframes for Animations */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Destinations Section */
+    .destinations {
+        padding: 80px 20px;
+        background: #f7f7f7;
+        text-align: center;
+    }
+
+    .destinations h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .destinations-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .destination {
+        width: 45%;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+
+    .destination h3 {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 24px;
+    }
+
+    .destination:hover {
+        transform: scale(1.05);
+    }
+
+    /* Packages Section */
+    .packages {
+        padding: 80px 20px;
+    }
+
+    .packages h2 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .packages-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .package-card {
+        background: #fff;
+        width: 45%;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .package-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* Package Card Details */
+    .package-details {
+        padding: 20px;
+        text-align: left;
+    }
+
+    .package-details h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .package-details p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .package-details .price {
+        font-size: 20px;
+        font-weight: bold;
+        color: #f0c040;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .book-btn {
+        display: inline-block;
+        background: #f0c040;
+        color: #000;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+
+    .book-btn:hover {
+        background: #e0a020;
+    }
+
+    /* Footer Styles */
+    footer {
+        background: #333;
+        color: #fff;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .footer-content h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .footer-content p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .social-links a {
+        display: inline-block;
+        margin: 0 10px;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+
+    .social-links img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-links a:hover {
+        opacity: 1;
+    }
+</style>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">Mountain Adventures</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <video autoplay muted loop id="bg-video">
+            <source src="/mountain/mountainvideohmm.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Explore the World's Best Mountain Destinations</h1>
+            <p>Your dream mountains adventure awaits. Discover our exclusive packages today.</p>
+            <a href="#packages" class="cta-btn">Explore Packages</a>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section id="destinations" class="destinations">
+        <h2>Top Mountain Destinations</h2>
+        <div class="destinations-grid">
+            <div class="destination" style="background-image: url('/mountain/image.png');">
+                <h3>Switzerland</h3>
+            </div>
+            <div class="destination" style="background-image: url('/mountain/image copy.png');">
+                <h3>Nepal</h3>
+            </div>
+            <div class="destination" style="background-image: url('/mountain/image copy 2.png');">
+                <h3>Colorado</h3>
+            </div>
+            <div class="destination" style="background-image: url('/mountain/image copy 6.png');">
+                <h3>India</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <h2>Exclusive Packages</h2>
+        <div class="packages-grid">
+            <div class="package-card">
+                <img src="/mountain/image copy 4.png" alt="Switzerland Package">
+                <div class="package-details">
+                    <h3>Switzerland Ski Resort</h3>
+                    <p>7 Days, 6 Nights | All meals included | Skiing & Spa</p>
+                    <span class="price">$4,299</span>
+                    <a href="booknow.html" class="book-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="package-card">
+                <img src="/mountain/image copy 5.png" alt="Nepal Package">
+                <div class="package-details">
+                    <h3>Nepal Trekking Adventure</h3>
+                    <p>10 Days, 9 Nights | Guided Trekking, Cultural Tours & More</p>
+                    <span class="price">$2,999</span>
+                    <a href="booknow.html" class="book-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="package-card">
+                <img src="/mountain/image copy 7.png" alt="Colorado Package">
+                <div class="package-details">
+                    <h3>Mountain Lodge Telluride</h3>
+                    <p>7 Days, 6 Nights | Guided Trekking, Cultural Tours | All meals included</p>
+                    <span class="price">$3,999</span>
+                    <a href="booknow.html" class="book-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="package-card">
+                <img src="/mountain/image copy 8.png" alt="India Package">
+                <div class="package-details">
+                    <h3>Mayfair Hill Resort Darjeeling</h3>
+                    <p>10 Days, 9 Nights | Guided Trekking, Cultural Tours | All meals and transport</p>
+                    <span class="price">$2,999</span>
+                    <a href="booknow.html" class="book-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <p>For inquiries, please email us at info@Worldtravel.com or call 8975473809</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100080976849606"><img src="/temple_img/facbook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/itz_asish_kumar_bera/"><img src="/temple_img/ins.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</body>
+</html>

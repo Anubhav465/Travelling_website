@@ -1,0 +1,92 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00695c;
+}
+
+.resorts {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.resort {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.resort img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.resort:hover {
+    transform: scale(1.05);
+}
+
+.resort:hover img {
+    transform: scale(1.1);
+}
+
+h2 {
+    margin: 10px 0;
+    color: #004d40;
+}
+
+.details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.details.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.details h3 {
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+.details p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.details .cost {
+    font-weight: bold;
+    color: #00796b;
+}

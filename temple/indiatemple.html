@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Temples in India</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #800000 3px solid;
+        }
+        header h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .temple {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border: #ccc 1px solid;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+        }
+        .temple img {
+            width: 100%;
+            max-width: 300px;
+            height: 150px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin: 10px;
+        }
+        .temple img:hover {
+            transform: scale(1.05);
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            text-align: left;
+        }
+        .hotel-link {
+            display: block;
+            margin: 10px auto;
+            background: #800000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            width: fit-content;
+        }
+        .hotel-link:hover {
+            background: #660000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Best Temples in India</h1>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/about.html">About Us</a>
+            <a href="#services">Services</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="temple" onclick="toggleDetails('details1')">
+            <h2>Kedarnath Temple</h2>
+            <img src="/temple/kedarnath1.png" alt="Kedarnath Temple">
+            <img src="/temple/kedarnath2.png" alt="Kedarnath Temple">
+            <img src="/temple/kedarnath3.png" alt="Kedarnath Temple">
+            <div id="details1" class="details">
+                <p>Located in the Himalayas, Kedarnath Temple is one of the most sacred Hindu temples dedicated to Lord Shiva. It is one of the 12 Jyotirlingas and attracts thousands of pilgrims every year.</p>
+                <a href="https://www.tripadvisor.com/HotelsNear-g1162524-d1204369-Kedarnath_Temple-Kedarnath_Uttarakhand.html" class="hotel-link" target="_blank">Nearest Hotels</a>
+            </div>
+        </div>
+        <div class="temple" onclick="toggleDetails('details2')">
+            <h2>Meenakshi Temple</h2>
+            <img src="/temple/meenakshi1.png" alt="Meenakshi Temple">
+            <img src="/temple/meenakshi2.png" alt="Meenakshi Temple">
+            <img src="/temple/meenakshi3.png" alt="Meenakshi Temple">
+            <div id="details2" class="details">
+                <p>Located in Madurai, Tamil Nadu, the Meenakshi Temple is a historic Hindu temple dedicated to Goddess Parvati and Lord Shiva. The temple is renowned for its magnificent architecture and intricate carvings.</p>
+                <a href="https://www.tripadvisor.com/HotelsNear-g297677-d318041-Meenakshi_Temple-Madurai_Madurai_District_Tamil_Nadu.html" class="hotel-link" target="_blank">Nearest Hotels</a>
+            </div>
+        </div>
+        <div class="temple" onclick="toggleDetails('details3')">
+            <h2>Golden Temple</h2>
+            <img src="/temple/golden1.png" alt="Golden Temple">
+            <img src="/temple/golden2.png" alt="Golden Temple">
+            <img src="/temple/golden3.png" alt="Golden Temple">
+            <div id="details3" class="details">
+                <p>The Golden Temple, also known as Harmandir Sahib, is the holiest Gurdwara of Sikhism located in Amritsar, Punjab. It is famous for its golden dome and serene surroundings.</p>
+                <a href="https://www.tripadvisor.com/HotelsNear-g303884-d317336-Golden_Temple-Amritsar_Amritsar_District_Punjab.html" class="hotel-link" target="_blank">Nearest Hotels</a>
+            </div>
+        </div>
+        <div class="temple" onclick="toggleDetails('details4')">
+            <h2>Somnath Temple</h2>
+            <img src="/temple/somnath1.png" alt="Somnath Temple">
+            <img src="/temple/somnath2.png" alt="Somnath Temple">
+            <img src="/temple/somnath3.png" alt="Somnath Temple">
+            <div id="details4" class="details">
+                <p>Somnath Temple, located in Gujarat, is one of the most important pilgrimage sites in India. It is one of the 12 Jyotirlingas and has been rebuilt several times due to invasions.</p>
+                <a href="https://www.tripadvisor.com/HotelsNear-g297627-d2658341-Somnath_Mahadev_Temple-Somnath_Gir_Somnath_District_Gujarat.html" class="hotel-link" target="_blank">Nearest Hotels</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

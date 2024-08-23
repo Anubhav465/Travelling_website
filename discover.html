@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - World Travel</title>
+    <link rel="stylesheet" href="discover_style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>World Travel</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="discover-section">
+        <div class="container">
+            <h1>Discover the World</h1>
+            <p>Explore the best places to travel in different countries.</p>
+
+            <!-- India Section -->
+            <div class="country-section" id="india">
+                <h2>India</h2>
+                <div class="places-container">
+                    <div class="place-item">
+                        <img src="/discover_images/image.png" alt="Goa">
+                        <div class="caption">Goa</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="/mountain/image copy 2.png"Darjeeling">
+                        <div class="caption">Darjeeling</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="/discover_images/image copy.png" alt="Jaipur">
+                        <div class="caption">Jaipur</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- USA Section -->
+            <div class="country-section" id="usa">
+                <h2>USA</h2>
+                <div class="places-container">
+                    <div class="place-item">
+                        <img src="/discover_images/image copy 4.png" alt="New York">
+                        <div class="caption">New York</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="/discover_images/image copy 5.png" alt="San Francisco">
+                        <div class="caption">San Francisco</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="/discover_images/image copy 6.png" alt="Las Vegas">
+                        <div class="caption">Las Vegas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paris Section -->
+            <div class="country-section" id="paris">
+                <h2>Paris</h2>
+                <div class="places-container">
+                    <div class="place-item">
+                        <img src="mountain/discover_images/image copy 7.png" alt="Eiffel Tower">
+                        <div class="caption">Eiffel Tower</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="mountain/discover_images/image copy 9.png" alt="Louvre Museum">
+                        <div class="caption">Louvre Museum</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="mountain/discover_images/image copy 10.png" alt="Notre Dame">
+                        <div class="caption">Notre Dame</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Switzerland Section -->
+            <div class="country-section" id="switzerland">
+                <h2>Switzerland</h2>
+                <div class="places-container">
+                    <div class="place-item">
+                        <img src="mountain/discover_images/image copy 11.png" alt="Zurich">
+                        <div class="caption">Zurich</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="mountain/discover_images/image copy 13.png" alt="Matterhorn">
+                        <div class="caption">Matterhorn</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="mountain/discover_images/image copy 12.png" alt="Interlaken">
+                        <div class="caption">Interlaken</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dubai Section -->
+            <div class="country-section" id="dubai">
+                <h2>Dubai</h2>
+                <div class="places-container">
+                    <div class="place-item">
+                        <img src="/discover_images/brujkhalifa.jpeg" alt="Burj Khalifa">
+                        <div class="caption">Burj Khalifa</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="/discover_images/plam.jpeg" alt="Palm Jumeirah">
+                        <div class="caption">Palm Jumeirah</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="mountain/discover_images/image copy 16.png" alt="Dubai Mall">
+                        <div class="caption">Dubai Mall</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- London Section -->
+            <div class="country-section" id="london">
+                <h2>London</h2>
+                <div class="places-container">
+                    <div class="place-item">
+                        <img src="/discover_images/bigben.jpeg" alt="Big Ben">
+                        <div class="caption">Big Ben</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="/discover_images/londoneye.jpeg" alt="London Eye">
+                        <div class="caption">London Eye</div>
+                    </div>
+                    <div class="place-item">
+                        <img src="/discover_images/towerbridge.jpeg" alt="Tower Bridge">
+                        <div class="caption">Tower Bridge</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <p>© 2024 World Travel. All rights reserved.</p>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="discover_script.js">// discover_script.js
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const placeItems = document.querySelectorAll('.place-item');
+        
+            placeItems.forEach(item => {
+                item.addEventListener('mouseover', () => {
+                    item.querySelector('.caption').style.opacity = '1';
+                });
+        
+                item.addEventListener('mouseout', () => {
+                    item.querySelector('.caption').style.opacity = '0';
+                });
+            });
+        });
+        </script>
+</body>
+</html>

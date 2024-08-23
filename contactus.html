@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: #000000;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Contact Card Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile image entry animation */
+.profile-img img {
+    width: 160px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 5px solid #f5f7fa;
+    transition: transform 0.5s ease;
+    opacity: 1;
+    transform: scale(0.5);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.profile-img img.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.title {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #777;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.contact-details a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #007bff;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: no-repeat center center;
+    background-size: contain;
+    margin: 0 10px;
+    transition: transform 0.5s ease;
+}
+
+.social-links .icon.instagram {
+    background-image: url('instagram-icon.png');
+}
+
+.social-links .icon.facebook {
+    background-image: url('facebook-icon.png');
+}
+
+.social-links .icon:hover {
+    transform: scale(1.1);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+</style>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="contact-card">
+            <div class="profile-img">
+                <img src="/Myprofile_pic.jpg" alt="Your Image">
+            </div>
+            <h2>Anubhav Paul</h2>
+            <p class="title">Software Engineer | Web Developer</p>
+            <div class="contact-details">
+                <p><strong>Instagram:</strong> <a href="https://instagram.com/yourprofile">Myprofile</a></p>
+                <p><strong>Facebook:</strong> <a href="https://facebook.com/yourprofile">Myprofile</a></p>
+                <p><strong>Email:</strong> <a href="mailto:your.email@example.com">anubhav@example.com</a></p>
+                <p><strong>Phone:</strong> +91 888 888 888</p>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/yourprofile" class="icon instagram"></a>
+                <a href="https://facebook.com/yourprofile" class="icon facebook"></a>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2024 Anubhav Paul. All Rights Reserved.</p>
+        <p>Designed by Anubhav Paul</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

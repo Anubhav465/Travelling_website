@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now | Travel Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset some default styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background: url("/booknow_img/Bz5QCDcQRdSG10HkNQAyDw[1].jpeg") no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        color: #fff;
+        animation: fadeInBody 1s ease-in-out; /* Body fade-in animation */
+    }
+
+    @keyframes fadeInBody {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    header {
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+        animation: fadeInHeader 1.5s ease-in-out; /* Header fade-in animation */
+    }
+
+    @keyframes fadeInHeader {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    main {
+        padding: 1rem;
+        flex: 1;
+    }
+
+    #booking-form {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 2rem auto;
+        color: #333;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    #booking-form.visible {
+        opacity: 1;
+        transform: translateY(0);
+        animation: slideInForm 1s ease-in-out; /* Form slide-in animation */
+    }
+
+    @keyframes slideInForm {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #booking-form h2 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .btn-primary {
+        background: #007BFF;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn-primary:hover {
+        background: #0056b3;
+        transform: scale(1.05); /* Button scale effect on hover */
+    }
+
+    .btn-primary:active {
+        animation: bounceButton 0.3s ease; /* Button bounce effect on click */
+    }
+
+    @keyframes bounceButton {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.95);
+        }
+    }
+
+    footer {
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: auto;
+        animation: fadeInFooter 2s ease-in-out; /* Footer fade-in animation */
+    }
+
+    @keyframes fadeInFooter {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Popup styling */
+    #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        color: #333;
+        text-align: center;
+        width: 80%;
+        max-width: 400px;
+    }
+
+    #popup p {
+        margin-bottom: 1rem;
+    }
+
+    #popup button {
+        background: #007BFF;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #popup button:hover {
+        background: #0056b3;
+    }
+
+</style>
+<body>
+    <header>
+        <h1>Book Your Trip</h1>
+    </header>
+    
+    <main>
+        <section id="booking-form" class="visible">
+            <h2>Book Now</h2>
+            <form id="book-now-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <select id="destination" name="destination" required>
+                        <option value="maldives">Maldives</option>
+                        <option value="paris">Paris</option>
+                        <option value="tokyo">Tokyo</option>
+                        <option value="new-york">New York</option>
+                        <option value="cancun">Cancún</option>
+                        <option value="bali">Bali</option>
+                        <option value="sydney">Sydney</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rooms">Number of Rooms</label>
+                    <input type="number" id="rooms" name="rooms" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="check-in">Check-in Date</label>
+                    <input type="date" id="check-in" name="check-in" required>
+                </div>
+                <div class="form-group">
+                    <label for="check-out">Check-out Date</label>
+                    <input type="date" id="check-out" name="check-out" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" name="guests" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="total-price">Total Price: $<span id="total-price">120</span></label>
+                </div>
+                <button type="submit" class="btn-primary">Book Now</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Travel Website. All rights reserved.</p>
+    </footer>
+
+    <div id="popup">
+        <p>Your booking has been successfully completed!</p>
+        <button id="close-popup">Close</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById('booking-form');
+            const roomsInput = document.getElementById('rooms');
+            const totalPriceElement = document.getElementById('total-price');
+            const popup = document.getElementById('popup');
+            const closePopupBtn = document.getElementById('close-popup');
+            const bookingForm = document.getElementById('book-now-form');
+            
+            const pricePerRoom = 100; // Price per room
+
+            // Update total price based on the number of rooms
+            roomsInput.addEventListener('input', function() {
+                const numberOfRooms = parseInt(roomsInput.value);
+                const totalPrice = numberOfRooms * pricePerRoom;
+                totalPriceElement.textContent = totalPrice;
+            });
+
+            // Show popup when the form is submitted
+            bookingForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+                popup.style.display = 'block'; // Show the popup
+            });
+
+            // Close the popup
+            closePopupBtn.addEventListener('click', function() {
+                popup.style.display = 'none';
+            });
+
+            setTimeout(() => {
+                form.classList.add('visible');
+            }, 500); // Delay form animation
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - World Travel</title>
+    <link rel="stylesheet" href="community_style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>World Travel</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="community-section">
+        <div class="container">
+            <h1>Join Our Community</h1>
+            <p>Connect with fellow travelers, share your experiences, and discover new destinations together.</p>
+
+            <!-- Community Post Form -->
+            <div class="post-form">
+                <h2>Share Your Experience</h2>
+                <form id="postForm">
+                    <textarea id="postContent" placeholder="Share your travel story..." required></textarea>
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+
+            <!-- Community Posts -->
+            <div class="posts-container" id="postsContainer">
+                <!-- Posts will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <p>© 2024 World Travel. All rights reserved.</p>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="community_script.js">// community_script.js
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const postForm = document.getElementById('postForm');
+            const postContent = document.getElementById('postContent');
+            const postsContainer = document.getElementById('postsContainer');
+        
+            // Load saved posts from localStorage
+            const savedPosts = JSON.parse(localStorage.getItem('communityPosts')) || [];
+        
+            // Display saved posts
+            savedPosts.forEach(post => {
+                addPostToDOM(post.content, post.timestamp);
+            });
+        
+            // Handle form submission
+            postForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const content = postContent.value.trim();
+                if (content === '') return;
+        
+                const timestamp = new Date().toLocaleString();
+                addPostToDOM(content, timestamp);
+        
+                // Save post to localStorage
+                savedPosts.push({ content, timestamp });
+                localStorage.setItem('communityPosts', JSON.stringify(savedPosts));
+        
+                postContent.value = '';
+            });
+        
+            // Function to add a post to the DOM
+            function addPostToDOM(content, timestamp) {
+                const postItem = document.createElement('div');
+                postItem.classList.add('post-item');
+        
+                const postText = document.createElement('p');
+                postText.textContent = content;
+        
+                const postTimestamp = document.createElement('div');
+                postTimestamp.classList.add('timestamp');
+                postTimestamp.textContent = `Posted on ${timestamp}`;
+        
+                postItem.appendChild(postText);
+                postItem.appendChild(postTimestamp);
+                postsContainer.prepend(postItem);
+            }
+        });
+        </script>
+</body>
+</html>

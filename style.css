@@ -1,0 +1,271 @@
+body {
+   font-family: 'Poppins', sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   background-color: #f4f4f4;
+}
+
+header {
+   width: 100%;
+   height: 90vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg1.jpeg') no-repeat center center/cover;
+   color: white;
+}
+
+nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
+nav h4 {
+   margin: 0;
+}
+
+nav ul {
+   list-style: none;
+   display: flex;
+   gap: 15px;
+}
+
+nav ul li {
+   margin: 0;
+}
+
+nav ul li a {
+   text-decoration: none;
+   color: white;
+   font-size: 16px;
+   padding: 10px 20px;
+   border-radius: 20px;
+   transition: background 0.3s;
+}
+
+nav ul li a:hover {
+   background: #f39c12;
+}
+
+.content {
+   text-align: center;
+   padding: 0 20px;
+}
+
+.content h1 {
+   font-size: 3rem;
+   margin-bottom: 20px;
+}
+
+.content p {
+   font-size: 1.2rem;
+   margin-bottom: 30px;
+}
+
+.content button {
+   padding: 10px 20px;
+   border: none;
+   border-radius: 30px;
+   background: #f39c12;
+   color: white;
+   font-size: 1rem;
+   cursor: pointer;
+   transition: background 0.3s;
+}
+
+.content button:hover {
+   background: #d35400;
+}
+
+.tripbox {
+   padding: 20px;
+   background-color: white;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+   border-radius: 10px;
+   margin: -50px auto 0;
+   width: 90%;
+   max-width: 1200px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
+   backdrop-filter: blur(10px);
+}
+
+.tripbox .card {
+   flex: 1 1 calc(33.333% - 10px);
+   min-width: 250px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.tripbox .card h4 {
+   margin: 0;
+   font-size: 1rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.tripbox .card input, 
+.tripbox input[type="button"] {
+   width: 100%;
+   padding: 10px;
+   border: none;
+   border-radius: 5px;
+   font-size: 1rem;
+}
+
+.tripbox input[type="button"] {
+   background-color: #f39c12;
+   color: white;
+   cursor: pointer;
+   transition: background 0.3s;
+}
+
+.tripbox input[type="button"]:hover {
+   background-color: #d35400;
+}
+
+.offers {
+   padding: 50px 20px;
+   background-color: #fff;
+}
+
+.offers h1 {
+   text-align: center;
+   font-size: 2.5rem;
+   margin-bottom: 20px;
+}
+
+.offers p {
+   text-align: center;
+   font-size: 1.2rem;
+   margin-bottom: 50px;
+}
+
+.offers .cards {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 20px;
+}
+
+.offers .card {
+   background: white;
+   border-radius: 10px;
+   overflow: hidden;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+   flex: 1 1 calc(25% - 20px);
+   min-width: 250px;
+}
+
+.offers .card h3 {
+   margin: 0;
+   background-color: #f39c12;
+   color: white;
+   text-align: center;
+   padding: 10px;
+   font-size: 1.2rem;
+}
+
+.offers .card .container {
+   position: relative;
+}
+
+.offers .card .image {
+   width: 100%;
+   display: block;
+}
+
+.offers .card .text {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   padding: 10px;
+   background: rgba(0, 0, 0, 0.7);
+   color: white;
+   font-size: 0.9rem;
+}
+
+.offers .card .cntbox {
+   padding: 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #f9f9f9;
+}
+
+.like-container {
+   display: flex;
+   align-items: center;
+   font-size: 1.5rem;
+}
+
+.like-container button {
+   background: none;
+   border: none;
+   cursor: pointer;
+   color: #888;
+   transition: color 0.3s;
+}
+
+.like-container button:hover {
+   color: #e74c3c;
+}
+
+.like-container button.liked {
+   color: #e74c3c;
+}
+
+.price h4 {
+   margin: 0;
+   font-size: 1.5rem;
+   font-weight: 700;
+}
+
+.price a {
+   color: #3498db;
+   text-decoration: none;
+   transition: color 0.3s;
+}
+
+.price a:hover {
+   color: #2980b9;
+}
+
+.days {
+   background-color: #3498db;
+   color: white;
+   padding: 10px;
+   border-radius: 50%;
+   text-align: center;
+   font-size: 1.2rem;
+   transition: transform 0.3s;
+}
+
+.days:hover {
+   transform: rotate(360deg);
+}
+
+@media (max-width: 768px) {
+   .tripbox {
+       flex-direction: column;
+   }
+
+   .tripbox .card {
+       width: 100%;
+   }
+
+   .offers .cards {
+       flex-direction: column;
+   }
+
+   .offers .card {
+       width: 100%;
+   }
+}
